@@ -30,7 +30,8 @@ openssl-devel
 perl-core
 
 # useful CLI tools
-curl
+# note: curl is not listed here because CentOS Stream 9 ships curl-minimal
+# which conflicts with the full curl package
 wget
 htop
 jq
