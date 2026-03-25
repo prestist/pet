@@ -7,6 +7,8 @@ centpkg
 moreutils
 
 python3-ipython
+python3-pip
+python3-devel
 gdb
 fzf
 ripgrep
@@ -14,3 +16,49 @@ bat
 mold
 
 ShellCheck
+
+# editors
+vim
+nano
+
+# build essentials
+gcc
+gcc-c++
+make
+cmake
+openssl-devel
+perl-core
+
+# useful CLI tools
+curl
+wget
+htop
+jq
+tree
+fd-find
+
+# compression
+zip
+unzip
+
+# shell utilities
+bash-completion
+
+# kerberos
+krb5-workstation
+
+# required for host-spawn
+dbus
+
+# Go development
+golang
+
+# Rust development
+rust
+cargo
+rust-src
+rust-analyzer
+
+# Node.js development
+nodejs
+npm

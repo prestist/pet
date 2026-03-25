@@ -14,13 +14,13 @@ jrnl
 inotify-tools
 diffoscope diffutils python3-tlsh sqlite
 
-# for decrypting GPG files
+# for GPG signing
 pinentry
 
 # for YubiKey
 yubikey-manager
 
-# language servers for helix
+# language servers
 python-lsp-server
 nodejs-bash-language-server
 # already pulled in via buildroot deps, but for completeness

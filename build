@@ -84,6 +84,29 @@ fi
 # install our packages
 grep -hv '^#' deps.txt ${matches_cosa_fver:+deps-pet.txt} | xargs dnf install -y --setopt=install_weak_deps=False
 
+# install host-spawn for running host commands from within toolbox
+curl -L https://github.com/1player/host-spawn/releases/latest/download/host-spawn-$(uname -m) -o /usr/local/bin/host-spawn && \
+  chmod +x /usr/local/bin/host-spawn
+
+# create wrapper scripts for common host commands
+for cmd in podman docker flatpak systemctl; do
+  printf '#!/bin/sh\nexec host-spawn %s "$@"\n' "${cmd}" > /usr/local/bin/${cmd}
+  chmod +x /usr/local/bin/${cmd}
+done
+
+# install xoc script for running Claude Code in containers
+# from jlebon's dotfiles: https://github.com/jlebon/dotfiles
+curl -L https://raw.githubusercontent.com/jlebon/dotfiles/fe1fcd93a50abcb38b9e66dcdff6d60f4bdd21a6/dot_local/bin/executable_xoc -o /usr/local/bin/xoc && \
+  chmod +x /usr/local/bin/xoc
+
+# install OpenCode globally
+npm install -g opencode-ai
+
+# configure GPG for terminal-based signing
+mkdir -p /root/.gnupg && \
+  echo "pinentry-program /usr/bin/pinentry-curses" > /root/.gnupg/gpg-agent.conf && \
+  chmod 700 /root/.gnupg
+
 # we want the host srv
 rmdir /srv && ln -sT /run/host/srv /srv
 
