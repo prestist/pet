@@ -1,6 +1,6 @@
 # pet
 
-[![quay.io repository](https://img.shields.io/badge/updated-2026--03--19-green)](https://quay.io/repository/prestist/pet)
+[![quay.io repository](https://img.shields.io/badge/updated-2026--03--19-green)](https://quay.io/repository/spresti/pet)
 
 This is my [Toolbx](https://containertoolbx.org/) container
 that I use everyday for hacking on
@@ -14,7 +14,7 @@ and additional development packages.
 To use:
 
 ```
-toolbox create --image quay.io/prestist/pet
+toolbox create --image quay.io/spresti/pet
 toolbox enter pet
 ```
 
@@ -35,7 +35,7 @@ want to run `rhsetup` to install certs and `rhpkg`.
 This repository runs a weekly
 [GitHub Actions job](https://github.com/prestist/pet/actions/workflows/build.yml)
 to update a
-[container image](https://quay.io/repository/prestist/pet)
+[container image](https://quay.io/repository/spresti/pet)
 hosted on [Quay.io](https://quay.io/) (that workflow is
 heavily based on the one from
 [this repo](https://github.com/coreos/mkpasswd-container)).

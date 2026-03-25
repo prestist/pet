@@ -1,7 +1,7 @@
 name: Build
 
 env:
-  QUAY_BASE: quay.io/prestist/pet
+  QUAY_BASE: quay.io/spresti/pet
   FEDORA_TOOLBOX: quay.io/fedora/fedora-toolbox
   CENTOS_TOOLBOX: quay.io/toolbx-images/centos-toolbox
 
